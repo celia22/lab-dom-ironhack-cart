@@ -14,31 +14,29 @@ console.log("hello")
 
 function calculateAll() {
   
- let updateAllProducts = document.getElementsByClassName("product");
- //let totalSum = document.getElementById("total-value span").innerHTML = `${finalValue}`// Aun por declarar finalvalue y hacer la suma
+ let updateAllProducts = document.getElementsByClassName("product");  
  
- let finalValue = 0;
  for(let x = 0; x < updateAllProducts.length; x++){   
-    updateSubtotal(updateAllProducts[x]);
-   
-    console.log(x)
+   updateSubtotal(updateAllProducts[x]);
+   console.log(x)
  }; 
 
 
 
-/*
-Our calculation functionality is still incomplete. The subtotal for each product is being updated, 
-but the total value remains untouched.
+ let multipliedProducts = document.getElementsByClassName("subtotal");
+ console.log(multipliedProducts)
+ 
+ 
+ let finalValue = 0;
+ for(let i = 0; i < multipliedProducts.length; i++){   
+    finalValue += parseFloat(multipliedProducts[i].innerHTML)
+    console.log("finalvalue =" + finalValue)
+};
 
-At the end of the `calculateAll()` function, reuse the total value you just calculated in the previous
- iteration and update the corresponding DOM element. Calculate the total price for the products in your
-  cart by summing all of the subtotals returned by `updateSubtotal()` when it was called with each product.
-
-Lastly, display that value on your DOM.*/
+document.getElementById("total-value").innerHTML = `${finalValue}`;
 
 
-  // ITERATION 3
-  //... your code goes here
+
 }
 
 calculateAll()
